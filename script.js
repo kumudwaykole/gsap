@@ -50,24 +50,65 @@
 // })
 
 
-var tl = gsap.timeline()
+// var tl = gsap.timeline()
 
-tl.from("h2",{
-     y:-30,
-     opacity:0,
-     duration:1,
-     delay:0.5
-})
-tl.from("h4",{
-    y:-30,
-    opacity:0,
-    duration: 1,
-    stagger:0.3
-})
+// tl.from("h2",{
+//      y:-30,
+//      opacity:0,
+//      duration:1,
+//      delay:0.5
+// })
+// tl.from("h4",{
+//     y:-30,
+//     opacity:0,
+//     duration: 1,
+//     stagger:0.3
+// })
 
-tl.to("heading",{
-    y:-50,
-    opacity: 0,
-    duration: 1,
+// tl.to("heading",{
+//     y:-50,
+//     opacity: 0,
+//     duration: 1,
     
+// })
+
+
+gsap.from("#page #box",{
+  scale:0,
+  delay:1,
+  duration:2,
+  rotate:360,
+  scrollTrigger:"#page #box"
+})
+gsap.from("#page1 #box", {
+    scale: 0,
+    delay: 1,
+    duration: 2,
+    rotate: 360,
+    scrollTrigger: "#page1 #box"
+})
+// gsap.from("#page2 #box", {
+//     scale: 0,
+//     delay: 1,
+//     duration: 2,
+//     rotate: 360,
+//     scrollTrigger: {
+//         trigger: "page2 #box",
+//         scroller: "body",
+//         markers: true,
+//         start:"top 60%"
+//     }
+// })
+
+gsap.from("#page2 #box", {
+    x:100,
+    state:0,
+    opacity:0,
+    duration:1,
+    rotate:720,
+    scrollTrigger: {
+        trigger: "#page2 box",
+        scroller: "body",
+        scrub:2,
+    }
 })

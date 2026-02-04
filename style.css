@@ -26,7 +26,7 @@ body {
   background-color: skyblue;
 } */
 
-body{
+/* body{
   background: #000;
   color: white;
 }
@@ -47,4 +47,50 @@ heading{
   position:absolute;
   text-align: center;
   padding: 50px 50px;
+} */
+
+
+
+#page{
+  background-color: lightblue;
+  width: 100%;
+  height: 100vh;
+  padding: 2px 3px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#page1 {
+  background-color: rgb(80, 152, 176);
+  width: 100%;
+  height: 100vh;
+  padding: 2px 3px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#page2 {
+  background-color: rgb(14, 125, 161);
+  width: 100%;
+  height: 100vh;
+  padding: 2px 3px;
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+}
+  
+#box{
+  height: 500px;
+  width: 300px;
+  background: crimson;
+}
+
+#h1{
+  font-size: 42px;
+  background-color: yellow;
+  color: black;
+
 }
