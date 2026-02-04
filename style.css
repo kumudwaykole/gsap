@@ -1,96 +1,28 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 html,
 body {
-  font-family: Arial, sans-serif;
-}
-
-#box{
-    height: 300px;
-    width: 300px;
-    background-color: orange;
-    border: 2px solid black;
-}
-#box1 {
-  height: 300px;
-  width: 300px;
-  background-color: crimson;
-}
-
-#box2 {
-  height: 300px;
-  width: 300px;
-  background-color: skyblue;
-} */
-
-/* body{
-  background: #000;
-  color: white;
-}
-#nav{ 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:  30px 50px;
-}
-
-#part2{
-  display: flex;
-  gap: 50px;
-}
-
-heading{
-  text-size-adjust: 40px;
-  position:absolute;
-  text-align: center;
-  padding: 50px 50px;
-} */
-
-
-
-#page{
-  background-color: lightblue;
-  width: 100%;
   height: 100vh;
-  padding: 2px 3px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-#page1 {
-  background-color: rgb(80, 152, 176);
-  width: 100%;
+#page1{
   height: 100vh;
-  padding: 2px 3px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  width: 100%;
+  background-color: black;
 }
 
 #page2 {
-  background-color: rgb(14, 125, 161);
-  width: 100%;
   height: 100vh;
-  padding: 2px 3px;
-  display: flex;
-  
-  align-items: center;
-  justify-content: center;
-}
-  
-#box{
-  height: 500px;
-  width: 300px;
-  background: crimson;
+  width: 100%;
+  background-color: lightblue;
 }
 
-#h1{
-  font-size: 42px;
-  background-color: yellow;
-  color: black;
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+}
 
+#page2 h1{
+  font-size: 40vh;
 }
