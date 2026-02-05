@@ -1,22 +1,31 @@
-var initialpath = `M 10 100 Q 500 100 990 100`;
-var finalpath = `M 10 100 Q 500 100 990 100`;
+var main = document.querySelector("#main")
+var cursor = document.querySelector("#cursor")
+var imgdiv = document.querySelector("#image")
 
-var string = document.querySelector("#string")
+window.addEventListener("mousemove", function(dets){
+   gsap.to(cursor,{
+    x: dets.clientX,
+    y: dets.clientY,
+    duration: 1,
+    ease: "back.out",
+   })
+})
 
-string.addEventListener("mousemove", function(dets){
-    initialpath = `M 10 100 Q ${dets.x} ${dets.y} 990 100`
-    gsap.to("svg path", {
-        attr:{d:initialpath},    // in the attribute, the path value for y exis has been changed - the Q 500 100 denotes the center of string. 100 value is for center point from y axis
-                                // that value is changed according to mouse move
-        duration: 0.3,
-        ease: "power3.out"
+imgdiv.addEventListener("mouseenter", function(){
+    cursor.innerHTML = 'View more'
+
+    gsap.to(cursor, {
+        scale:4,
+        backgroundColor: "fffffff8a"
     })
 })
 
-string.addEventListener("mouseleave", function(){
-    gsap.to("svg path", {
-        attr:{d:finalpath},
-        duration:0.5,
-        ease:"elastic.out(1,0.2)"
+
+imgdiv.addEventListener("mouseleave", function () {
+    cursor.innerHTML = ""
+    gsap.to(cursor, {
+        scale: 1,
+        backgroundColor: "fff"
+
     })
 })
