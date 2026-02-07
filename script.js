@@ -1,31 +1,40 @@
-var menu = document.querySelector("#nav i")
-var cross = document.querySelector("#full i")
+document.addEventListener("DOMContentLoaded", function () {
 
-var tl = gsap.timeline()
+    function textBreak() {
+        var h1 = document.querySelector("h1");
+        var h1text = h1.textContent;
 
-tl.to("#full", {
-  right:0,
-  duration: 0.8,  
-})
+        var splittedText = h1text.split("");
+        var halfvalue = Math.floor(splittedText.length / 2);
 
-tl.from("#full h4",{
-    x: 150,
-    duration: 0.5,
-    stagger: 0.2,
-    opacity: 0,
+        var clutter = "";
 
-})
+        splittedText.forEach(function (e, idx) {
+            if (idx < halfvalue) {
+                clutter += `<span class="a">${e}</span>`;
+            } else {
+                clutter += `<span class="b">${e}</span>`;
+            }
+        });
 
-tl.from("#full i",{
-    opacity:0,
-})
+        h1.innerHTML = clutter;
+    }
 
-tl.pause()
+    textBreak();
 
-menu.addEventListener("click", function(){
-    tl.play()
-})
+    gsap.from("h1 .a", {
+        y: 50,
+        duration: 0.6,
+        delay: 0.5,
+        opacity: 0,
+        stagger: 0.15,
+    });
+    gsap.from("h1 .b", {
+        y: 50,
+        duration: 0.6,
+        delay: 0.5,
+        opacity: 0,
+        stagger: -0.15,
+    });
 
-cross.addEventListener("click", function(){
-    tl.reverse()
-})
+});
