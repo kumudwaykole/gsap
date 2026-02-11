@@ -1,40 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
+function marqueAnimation(){
 
-    function textBreak() {
-        var h1 = document.querySelector("h1");
-        var h1text = h1.textContent;
 
-        var splittedText = h1text.split("");
-        var halfvalue = Math.floor(splittedText.length / 2);
 
-        var clutter = "";
 
-        splittedText.forEach(function (e, idx) {
-            if (idx < halfvalue) {
-                clutter += `<span class="a">${e}</span>`;
-            } else {
-                clutter += `<span class="b">${e}</span>`;
-            }
-        });
+    window.addEventListener("wheel", function (dets) {
+        if (dets.deltaY > 0) {
+            gsap.to(".marque", {
+                transform: 'translateX(-200%)',
+                duration: 4,
+                repeat: -1,
+                ease: "none"
+            })
 
-        h1.innerHTML = clutter;
-    }
+            gsap.to(".marque img", {
+                rotate: 180
+            })
+        } else {
+            gsap.to(".marque", {
+                transform: 'translateX(0%)',
+                duration: 4,
+                repeat: -1,
+                ease: "none"
+            })
 
-    textBreak();
+            gsap.to(".marque img", {
+                rotate: 0
+            })
+        }
+    })
+}
 
-    gsap.from("h1 .a", {
-        y: 50,
-        duration: 0.6,
-        delay: 0.5,
-        opacity: 0,
-        stagger: 0.15,
-    });
-    gsap.from("h1 .b", {
-        y: 50,
-        duration: 0.6,
-        delay: 0.5,
-        opacity: 0,
-        stagger: -0.15,
-    });
-
-});
+marqueAnimation()
